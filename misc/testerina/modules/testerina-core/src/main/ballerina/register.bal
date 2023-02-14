@@ -39,7 +39,6 @@ type TestFunction record {|
     int dependsOnCount = 0;
     TestFunction[] dependents = [];
     boolean visited = false;
-    TestConfig? config = ();
 |};
 
 class TestRegistry {
