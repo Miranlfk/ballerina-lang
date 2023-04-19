@@ -213,11 +213,6 @@ public class MethodGen {
         }
         MethodVisitor mv = cw.visitMethod(access, funcName, desc, null, null);
         mv.visitCode();
-        if (moduleClassName.contains("init")) {
-            mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
-            mv.visitLdcInsn(moduleClassName + "/" + funcName);
-            mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
-        }
 
         visitModuleStartFunction(module.packageID, funcName, mv);
 
