@@ -221,7 +221,8 @@ public class JvmTerminatorGen {
     private JvmTypeGen jvmTypeGen;
     private JvmCastGen jvmCastGen;
     private AsyncDataCollector asyncDataCollector;
-    HashSet<String> skipMethods = new HashSet<>();
+    HashSet<String> skipMethods = new HashSet<>(Arrays.asList("ballerina/http/2/$value$FailoverClient" +
+            "/performFailoverAction"));
 
     public JvmTerminatorGen(MethodVisitor mv, BIRVarToJVMIndexMap indexMap, LabelGenerator labelGen,
                             JvmErrorGen errorGen, PackageID packageID, JvmInstructionGen jvmInstructionGen,
